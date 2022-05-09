@@ -1,0 +1,401 @@
+/* Nav Bar */
+.navbar {
+  position: fixed;
+  width: 100vw;
+  opacity: 85%;
+  z-index: 15;
+  top: 0%;
+}
+
+.navbar-brand img {
+  max-height: 2.5rem;
+  margin: 0 20px 0 10px;
+}
+
+.navbar-light .navbar-brand {
+  color: rgba(252, 79, 6, 0.85);
+}
+
+.navbar-light .navbar-brand:hover,
+.navbar-brand:focus {
+  color: #e24705;
+}
+
+.nav-link {
+  color: gray;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: rgba(252, 79, 6, 0.75);
+}
+
+.nav-link.active {
+  color: #fc4f06;
+}
+
+/* 關閉搜尋按鈕 */
+.fa-times {
+  margin-right: 6px;
+}
+
+.close {
+  visibility: hidden;
+  position: absolute;
+  left: 50%;
+  top: 60px;
+  transform: translate(-50%, 0);
+  margin: 1rem 0 0rem;
+  color: #fc4f06;
+  border-color: #fc4f06;
+  opacity: 0%;
+  transition: opacity 0.625s ease-out;
+}
+
+.close.visible {
+  opacity: 100%;
+}
+
+.close:hover {
+  color: white;
+  background-color: #fc4f06;
+  border-color: #fc4f06;
+}
+
+.close:focus {
+  box-shadow: 0 0 0 0.25rem rgba(252, 79, 6, 0.25);
+}
+
+.list-panel {
+  width: 80.2vw;
+  margin: 110px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+}
+
+/* loading Page排版 */
+.loading {
+  color: #fc4f06;
+  display: flex;
+  margin: 25% auto;
+  align-items: center;
+}
+
+.loading h5 {
+  margin: 0 0 0 1rem;
+}
+
+/* 搜尋結果提示 */
+.result {
+  margin: 3vw auto 0;
+  text-align: center;
+}
+
+/* 卡片排版 */
+.user {
+  max-width: 130px;
+  border: none;
+  margin: 1rem 2rem;
+  color: #320f01;
+  text-align: center;
+  /* CSS Scan shadow example #19 */
+  /* 小範圍陰影 */
+  /* 大範圍陰影，用陰影大小差距製造浮起效果 */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  /* 將陰影效果效果，作為動畫，過度較流暢 */
+  transition: box-shadow 0.275s ease-in-out, transform 0.275s ease-out;
+}
+/* 卡片搖晃效果 */
+.user:hover {
+  transform-origin: bottom center;
+  /* 設定延遲，讓陰影動畫先開始 */
+  animation: shake 0.45s ease-out 0.125s;
+  z-index: 1;
+  /* CSS Scan shadow example #72 */
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-15deg);
+  }
+  40% {
+    transform: rotate(15deg);
+  }
+  60% {
+    transform: rotate(-5deg);
+  }
+  80% {
+    transform: rotate(5deg);
+  }
+}
+/* 卡片消失效果 */
+.user.hide {
+  transform-origin: bottom center;
+  transform: scale(0);
+}
+
+.card-footer {
+  /* 避免三行姓名卡片使同一行卡片露出底下空白 */
+  min-height: 190px;
+  padding: 0.5rem;
+  word-wrap: normal;
+}
+/* 卡片頭像 */
+.user img {
+  max-height: 180px;
+  /* 避免露出空白 */
+  min-width: 100px;
+  /* 等比縮小並小幅裁減 */
+  object-fit: cover;
+}
+
+/* 卡片姓名 */
+.user p {
+  margin: 0.25rem 0;
+}
+/* 卡片按鈕排版 */
+.user button {
+  /* 修正safari按鈕文字強行斷行 */
+  word-break: keep-all;
+  /* 使三行姓名的卡片按鈕位置與其他一致 */
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  bottom: 0%;
+}
+
+/* 愛心圖示 */
+.fa-heart {
+  cursor: pointer;
+  font-size: 2rem;
+  margin: 1rem auto 0;
+  color: rgba(252, 79, 6, 0.8);
+}
+
+/* 空心愛心 */
+.far.fa-heart {
+  transition: transform 0.375s ease-out;
+}
+
+.far.fa-heart:hover {
+  /* animation: zoom 0.55s ease-in-out; */
+  transform: rotateY(180deg);
+}
+
+/* 實心愛心 */
+.fas.fa-heart {
+  color: orangered;
+  animation: zoom 0.55s ease-in-out;
+  transition: transform 0.75s ease-out;
+}
+
+.fas.fa-heart:hover {
+  transform: scale(1.25);
+}
+
+/* 搜尋列 */
+/* 搜尋框聚焦配色 */
+.search input:focus {
+  border-color: #e24705;
+  box-shadow: 0 0 0 0.25rem rgba(252, 79, 6, 0.25);
+}
+
+.search input {
+  width: 15vw;
+  transition: width 0.275s ease-out;
+}
+
+.search input:focus {
+  width: 25vw;
+}
+
+/* 分頁器配色 */
+.pagination a {
+  color: #fc4f06;
+}
+
+.page-item.active .page-link {
+  background-color: #fc4f06;
+  border-color: #fc4f06;
+}
+
+.page-link:hover {
+  color: #e24705;
+}
+
+.page-link:focus {
+  color: #e24705;
+  box-shadow: 0 0 0 0.25rem rgba(252, 79, 6, 0.25);
+}
+
+/* 所有按鈕點擊行為設為橘色系配色 */
+.user button,
+.modal-footer button,
+.search button {
+  color: snow;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  background-color: #fc4f06;
+  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+}
+
+.user button:hover,
+.modal-footer button:hover,
+.search button:hover {
+  color: white;
+  background-color: #e24705;
+}
+
+.user button:focus,
+.modal-footer button:focus,
+.search button:focus {
+  color: white;
+  background-color: #e24705;
+  box-shadow: 0 0 0 0.25rem rgba(252, 79, 6, 0.25);
+}
+
+.user button:active,
+.modal-footer button:active,
+.search button:active {
+  color: white;
+  background-color: #b03704;
+}
+
+/* modal對應Grid System xs(1:2),md(1:3) 排版 */
+.modal-body .col-8,
+.modal-body .col-9 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.col-8 div,
+.col-9 div {
+  display: flex;
+  align-items: center;
+  color: dimgray;
+  line-height: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.col-8 p,
+.col-9 p {
+  margin-bottom: 0rem;
+}
+/* model姓名、內文效果 */
+.col-8 div:hover,
+.col-9 div:hover,
+.modal-title:hover {
+  color: #e24705;
+}
+
+/* 文字前font awesome 排版*/
+.modal-body .fas {
+  margin-right: 0.5rem;
+  font-size: 1.25rem;
+}
+
+/* 性別符號font awesome排版 */
+.fas.fa-venus {
+  margin-left: 0.5rem;
+  color: #f2699c;
+  font-size: 2rem;
+}
+
+.fas.fa-mars {
+  margin-left: 0.5rem;
+  color: #1a9bb1;
+  font-size: 2rem;
+}
+
+/* modal內所有font awesome 縮放效果*/
+.modal-content .fas:hover {
+  animation: zoom 0.55s ease-in-out;
+}
+
+@keyframes zoom {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(0.8);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  60% {
+    transform: scale(0.85);
+  }
+  85% {
+    transform: scale(1.1);
+  }
+}
+
+/* modal國旗 */
+.flag {
+  position: absolute;
+  top: -12%;
+  right: 10%;
+  filter: drop-shadow(0 0.5rem 0.25rem rgba(0, 0, 0, 0.25));
+}
+
+.flag:hover {
+  animation: shake 0.575s ease-out;
+  transform-origin: top center;
+}
+
+/* modal頭像 */
+.avatar {
+  border-radius: 0.5rem;
+  object-fit: cover;
+  max-width: 128px;
+  margin-left: 15%;
+  /* CSS Scan shadow example # */
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+.avatar:hover {
+  animation: shake 0.65s ease-in;
+  transform-origin: bottom center;
+}
+
+/* 選取反白效果 */
+::selection {
+  color: #ed9069;
+  background-color: rgba(67, 21, 1, 0.0925);
+}
+
+/* 分頁器 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 1.75rem 0 3rem;
+}
+
+.toast-header img {
+  max-height: 1.3rem;
+}
+
+.toast-body img {
+  max-width: 300px;
+  display: block;
+  margin: 0.25rem auto;
+  border-radius: 0.25rem;
+}
+
+.toast .btn-close:focus {
+  box-shadow: 0 0 0 0.25rem rgba(252, 79, 6, 0.25);
+}
